@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dự án Xanh Island - Sun Cát Bà</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slideshow {
+      position: relative;
+      width: 100%;
+      height: 500px;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .section {
+      padding: 50px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .section h2 {
+      font-size: 36px;
+      color: #0066cc;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 20px auto 0;
+      color: #666;
+    }
+
+    .videos {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .videos iframe {
+      width: 300px;
+      height: 200px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 50px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .advisor {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .advisor img {
+      width: 250px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      position: relative;
+    }
+
+    footer p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .footer-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .footer-buttons a {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .footer-buttons a.call {
+      background-color: #28a745;
+    }
+
+    .footer-buttons a.call:hover {
+      background-color: #218838;
+    }
+
+    .footer-buttons a.zalo {
+      background-color: #007bff;
+    }
+
+    .footer-buttons a.zalo:hover {
+      background-color: #0056b3;
+    }
+
+    /* Hình nền cho phần nhân viên hỗ trợ khách hàng */
+
+    /* Hình nền cho phần video */
+    .section.video-section {
+      background: url('images/6.jpg') no-repeat center center;
+      background-size: cover;
+      color: #fff; /* Đổi màu chữ để dễ đọc trên nền ảnh */
+    }
+
+    /* Đổi màu chữ của tiêu đề phần video */
+    .section.video-section h2 {
+      color: #fff;
+    }
+
+    /* Hình nền cho phần hình ảnh nổi bật */
+    .section.gallery-section {
+      background: url('images/3.jpg') no-repeat center center;
+      background-size: cover;
+      color: #fff; /* Đổi màu chữ để dễ đọc trên nền ảnh */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="slideshow">
+      <div class="slide active"><img src="images/1.jpg" alt="Slide 1"></div>
+      <div class="slide"><img src="images/2.jpg" alt="Slide 2"></div>
+      <div class="slide"><img src="images/3.jpg" alt="Slide 3"></div>
+      <div class="slide"><img src="images/4.jpg" alt="Slide 4"></div>
+    </div>
+  </header>
+
+  <section class="section advisor-section">
+    <h2>Chuyên viên kinh doanh</h2>
+    <div class="advisor">
+      <img src="images/5.jpg" alt="Nhân viên tư vấn">
+      <p>Phạm Thị Thu Hương</p>
+    </div>
+  </section>
+
+  <section class="section video-section">
+    <h2>Các video về Dự án Xanh Island - Sun Cát Bà</h2>
+    <div class="videos">
+      <iframe src="videos/2.mp4" frameborder="0" allowfullscreen></iframe>
+      <iframe src="videos/4.mp4" frameborder="0" allowfullscreen></iframe>
+      <iframe src="videos/5.mp4" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="section gallery-section">
+    <h2>Các hình ảnh nổi bật về Dự án Xanh Island - Sun Cát Bà</h2>
+    <div class="gallery">
+      <img src="images/1.jpg" alt="Sản phẩm 1">
+      <img src="images/2.jpg" alt="Sản phẩm 2">
+      <img src="images/3.jpg" alt="Sản phẩm 3">
+      <img src="images/4.jpg" alt="Sản phẩm 4">
+      <img src="images/1.jpg" alt="Sản phẩm 5">
+      <img src="images/2.jpg" alt="Sản phẩm 6">
+      <img src="images/6.jpg" alt="Sản phẩm 7">
+      <img src="images/3.jpg" alt="Sản phẩm 8">
+      <img src="images/1.jpg" alt="Sản phẩm 9">
+    </div>
+  </section>
+
+  <footer>
+    <p>Liên hệ CVKD BĐS - Hải Phòng, Hà Nội, Quảng Ninh</p>
+    <p>Phạm Thị Thu Hương - Hotline: 0966 416 905</p>
+    <div class="footer-buttons">
+      <a class="call" href="tel:0966416905">Gọi ngay</a>
+      <a class="zalo" href="https://zalo.me/0966416905" target="_blank">Chat Zalo</a>
+    </div>
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle('active', idx === i);
+      });
+    }
+
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }, 5000);
+  </script>
+</body>
+</html>
